@@ -1,0 +1,72 @@
+#include<iostream>
+#include<string.h>
+#include<cstdlib>
+#include<conio.h>
+float add(int);
+using namespace std;
+int main(int argc, char* argv[])
+{
+    int n = argc;
+    if(argc == 1)
+    {
+        cout<<"minimum two arguments required";
+        exit(1);
+    }
+    char* md = (char*)(argv[2]);
+    switch(*md)
+    {
+       
+        case '+':
+        {
+            float result = 0.00; 
+            for (int i = 3; i < n; i++)
+                {
+                    result += atof(argv[i]);
+                }
+            cout<<"the sum is :"<<result;
+            break;
+        }
+         case '-':
+        {
+           
+            float result = 0; 
+            for (int i = 3; i < n; i++)
+                {
+
+                    result =  atof(argv[i]) - result;
+                }
+                result = (-1) * result;
+            cout<<"the substaction is :"<<result;
+            break;
+        }
+        case '/':
+        {
+           
+            float result = atof(argv[3]); 
+
+            for (int i = 4; i < n; i++)
+                {
+                    
+                   result /= atof(argv[i]);
+                }
+                
+            cout<<"the Division is :"<<result;
+            break;
+        }
+        case '*':
+        {
+           
+            float result = 1; 
+
+            for (int i = 3; i < n; i++)
+                {
+                    
+                   result *= atof(argv[i]);
+                }
+                
+            cout<<"the Multiplication is :"<<result;
+            break;
+        }
+     }
+ }
+    
